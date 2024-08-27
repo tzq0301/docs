@@ -194,7 +194,7 @@ seq 10 | awk '{i=i+$1}; END{print i}'  # 计算第一列的总和
 awk '/PATTERN/{print; for(i=1;i<=3;++i) { getline; print; } }'  # 打印所有匹配 PATTERN 的行，并打印其后 3 行
 ```
 
-## column 对齐每一列
+## column
 
 ```bash
 column -t         # 制表
@@ -207,7 +207,7 @@ column -t -s ','  # 指定分隔符来制表
 tr ' ' '\n'  # 替换 space 为换行符
 ```
 
-## paste 合并多行
+## past
 
 ```bash
 # -s      将多行合并为一行
@@ -216,7 +216,7 @@ tr ' ' '\n'  # 替换 space 为换行符
 printf a\\nb\\nc | paste -sd "," -  # a,b,c
 ```
 
-## tee 在终端输出时，同时输出到文件
+## tee
 
 ```bash
 ls -a | tee output
@@ -334,7 +334,7 @@ cat /dev/null > $FILE
 dd if=/dev/null of=$FILE
 ```
 
-## 传输文件
+## 远程传输文件
 
 scp 对每个文件使用一个进程进行传输，而 rsync 只使用一个进程，因此一般 rsync 性能更高
 
@@ -369,7 +369,7 @@ rsync -r -v -e "ssh -i ~/.ssh/id_rsa" tmp/ hello@192.168.1.1:/tmp/abc
 sudo tcpdump -i any -n 'port 5000'
 ```
 
-## 下载文件 wget
+## wget
 
 ```bash
 wget -O 新名字    $URL
@@ -682,12 +682,14 @@ Host=
 sshpass -p $UserPwd ssh $UserName@$Host
 ```
 
-## 实现免密登录 - 将自己的 ssh 公钥 copy 到服务器上
+## ssh 免密登录
 
-将本机的 ~/.ssh/id_rsa.pub 公钥追加到远程服务器的 ~/.ssh/authorized_keys
+将本机的 `~/.ssh/id_rsa.pub` 公钥追加到远程服务器的 `~/.ssh/authorized_keys`
 
 ```bash
-UserName= && UserPwd= && IP=
+UserName=
+UserPwd=
+IP=
 sshpass -p $UserPwd ssh-copy-id $UserName@$IP
 ```
 
