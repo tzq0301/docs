@@ -14,6 +14,10 @@ download() {
 }
 ```
 
+```bash
+ossutil ls oss://$OSS_BUCKET
+```
+
 ## 安装 ossutil
 
 ```bash
