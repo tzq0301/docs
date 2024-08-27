@@ -37,6 +37,38 @@ int main() {
 }
 ```
 
+```cpp
+#include <iostream>
+#include <queue>
+#include <vector>
+
+class Element {
+public:
+    int val;
+
+    explicit Element(int val_) : val(val_) {}
+
+    auto operator>(const Element &another) const {
+        return this->val > another.val;
+    }
+};
+
+int main() {
+    const std::initializer_list<Element> elements{Element{3}, Element{1}, Element{4}, Element{1}, Element{5}};
+
+    std::priority_queue<Element, std::vector<Element>, std::greater<>> elements_min_heap{elements.begin(),
+                                                                                         elements.end()};
+
+    while (!elements_min_heap.empty()) {
+        std::cout << elements_min_heap.top().val << " ";
+        elements_min_heap.pop();
+    }
+    std::cout << std::endl;
+}
+
+// 1 1 3 4 5 
+```
+
 ## g++ 接收标准输入
 
 ```bash
