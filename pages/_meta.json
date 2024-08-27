@@ -1,14 +1,25 @@
 {
   "index": "Introduction",
-  "advanced": "Advanced (A Folder)",
+  "cpp": "C++",
+  "docker": "Docker",
+  "git": "Git",
+  "go": "Go",
+  "java": "Java",
+  "javascript": "JavaScript",
+  "linux": "Linux",
+  "mihomo": "mihomo",
+  "mysql": "MySQL",
+  "nginx": "Nginx",
+  "ossutil": "ossutil",
+  "python": "Python",
+  "redis": "Redis",
+  "vscode": "Visual Studio Code",
+  "regex": "正则表达式",
   "about": {
     "title": "About",
     "type": "page"
   },
   "contact": {
-    "title": "Contact ↗",
-    "type": "page",
-    "href": "https://github.com/tzq0301",
-    "newWindow": true
+    "display": "hidden"
   }
 }
