@@ -5,6 +5,38 @@
 * [Google C++ Style Guide](https://google.github.io/styleguide/cppguide.html)
 * [C++ docs | Microsoft](https://learn.microsoft.com/en-us/cpp/cpp/?view=msvc-170)
 
+## 堆 / 优先队列
+
+```cpp
+#include <iostream>
+#include <queue>
+#include <vector>
+
+int main() {
+    const auto data = {3, 1, 4, 1, 5, 9, 2, 6};
+
+    std::priority_queue<int> max_heap{data.begin(), data.end()};
+
+    while (!max_heap.empty()) {
+        std::cout << max_heap.top() << " ";
+        max_heap.pop();
+    }
+    std::cout << std::endl;
+    
+    // 大根堆 9 6 5 4 3 2 1 1 
+
+    std::priority_queue<int, std::vector<int>, std::greater<>> min_heap{data.begin(), data.end()};
+
+    while (!min_heap.empty()) {
+        std::cout << min_heap.top() << " ";
+        min_heap.pop();
+    }
+    std::cout << std::endl;
+    
+    // 小根堆 1 1 2 3 4 5 6 9 
+}
+```
+
 ## g++ 接收标准输入
 
 ```bash
