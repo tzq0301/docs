@@ -1,3 +1,4 @@
 {
-    "docker-file": "Dockerfile"
+    "docker-file": "Dockerfile",
+    "dockerignore": ".dockerignore"
 }
