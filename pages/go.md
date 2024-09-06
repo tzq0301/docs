@@ -2,7 +2,7 @@
 
 ```bash
 # 若不强制指定 CGO_ENABLED=0 ，那么当遇到类似 net.LookupHost 的函数时，Go 编译器可能会选择 CGO 的实现，最终编译出来的产物就是 dynamically linked 了
-CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build main.go
+CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -ldflags="-w -s" -o main main.go
 ```
 
 ## Install
