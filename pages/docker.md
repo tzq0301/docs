@@ -105,3 +105,14 @@ docker buildx use "$(docker buildx create)"
 docker buildx version
 docker buildx ls
 ```
+
+## .dockerignore
+
+```
+.git
+build
+random_stuff
+bin
+dist
+node_modules
+```
