@@ -5,6 +5,8 @@
 CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -ldflags="-w -s" -o main main.go
 ```
 
+* [Go sync.WaitGroup and The Alignment Problem](https://victoriametrics.com/blog/go-sync-waitgroup/)
+
 ## Install
 
 ```bash
