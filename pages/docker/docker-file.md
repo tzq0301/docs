@@ -65,13 +65,13 @@ COPY --from=build-stage /build/chrony/build/sbin/chronyd /
 
 ```
 
-运行以下命令可将产物（上述 Dockerfile 的最后两行）导出到 out 目录：
+运行以下命令可将产物（上述 Dockerfile 的最后两行）导出到 `out` 目录：
 
 ```bash
 docker build -o out .
 ```
 
-运行以下命令可进行多架构的构建，最终将产物（上述 Dockerfile 的最后两行）分别导出到 out 目录下的、以架构命名的目录：
+运行以下命令可进行多架构的构建，最终将产物（上述 Dockerfile 的最后两行）分别导出到 `out` 目录下的、以架构命名的目录：
 
 ```bash
 docker build -o out --platform linux/amd64,linux/arm64 .
