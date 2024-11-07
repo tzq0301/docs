@@ -4,6 +4,7 @@
 * [How to Write C++ Code | ClickHouse Docs](https://clickhouse.com/docs/en/development/style)
 * [Google C++ Style Guide](https://google.github.io/styleguide/cppguide.html)
 * [C++ docs | Microsoft](https://learn.microsoft.com/en-us/cpp/cpp/?view=msvc-170)
+* [C++ Insights](https://cppinsights.io/)
 
 ## 堆 / 优先队列
 
