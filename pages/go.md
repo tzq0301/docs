@@ -46,6 +46,25 @@ go env -w GOPROXY="https://repo.nju.edu.cn/repository/go/,direct"  # 设置代�
 go env | grep -E "GO111MODULE|GOPROXY"
 ```
 
+## go install 安装的 binary 在哪儿？
+
+如果环境变量 GOBIN 存在，那么就会安装到 GOBIN 目录下：
+
+```bash
+echo $GOBIN
+```
+
+如果 GOBIN 不存在，那么就会安装到 GOPATH 的 bin 子目录下：
+
+```bash
+echo $GOPATH
+echo $GOPATH/bin
+```
+
+如果 GOPATH 也不存在，那么就默认安装到默认位置的 bin 子目录下：例如，在 Linux 系统中默认位置为 `$HOME/go`，那么 go install 就会将 binary 安装到 `$HOME/go/bin` 下
+
+最后，如果该 bin 目录没有被加入到 PATH 中，那么在 .zshrc 或 .bashrc 中设置一下、source 一下，就能使用刚 go install 的 binary 了
+
 ## Data Race Detector
 
 [go.dev/doc/articles/race_detector](https://go.dev/doc/articles/race_detector)
