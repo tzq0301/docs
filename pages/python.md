@@ -1,11 +1,27 @@
 # Python
 
-## 配置 pip 镜像源
-
 [PyPI 软件仓库镜像使用帮助](https://help.mirrorz.org/pypi/URL_ADDRESS)
 
 ```bash
 pip config set global.index-url https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple
+```
+
+## uv 包/项目管理器
+
+[uv](https://github.com/astral-sh/uv): An extremely fast Python package and project manager, written in Rust.
+
+* 基于 pyproject.toml + uv.lock 进行依赖管理，并行安装依赖（远快于 pip 和 conda）
+* 删除 .venv 文件夹即可等于删掉环境
+*  不污染系统，不自动写配置，不乱改 .bashrc
+
+```bash
+uv init             # 初始化项目（生成 pyproject.toml）
+uv add numpy        # 安装依赖并自动写入配置文件
+uv run main.py      # 自动激活环境 + 运行代码
+
+uv sync # 手动下载依赖
+
+source .venv/bin/activate # 激活 uv 创建的环境，兼容传统 python 开发方式
 ```
 
 ## Python 虚拟环境
@@ -39,8 +55,7 @@ pip3 download -r requirements.txt -d $PWD/packages
 pip3 install --no-index --find-links=$PWD/packages -r requirements.txt
 ```
 
-## 编译 Python 3 源码，安装 Python 3，并配置为默认 Python Interpreter
-
+## Python 3 源码编译、安装与配置
 
 安装编译 Python 源码所需要的组件：
 
