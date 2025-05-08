@@ -79,12 +79,3 @@ username=
 HOSTNAME=发生公钥变更的主机名
 ssh-keygen -R $HOSTNAME
 ```
-
-## locale
-
-`LC_CTYPE: cannot change locale (UTF-8)` 错误解决：
-
-```bash
-export LC_ALL=en_US.UTF-8
-export LANG=en_US.UTF-8
-```

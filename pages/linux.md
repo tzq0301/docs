@@ -632,3 +632,12 @@ echo "$UserName:$UserPwd" | chpasswd
 # 免密提权
 echo "$UserName ALL=(ALL) NOPASSWD:ALL" | sudo tee -a /etc/sudoers > /dev/null
 ```
+
+## locale
+
+`LC_CTYPE: cannot change locale (UTF-8)` 错误解决：
+
+```bash
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+```
